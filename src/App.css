@@ -1,6 +1,6 @@
 .user_userInfo {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .user_userInfo > div {
