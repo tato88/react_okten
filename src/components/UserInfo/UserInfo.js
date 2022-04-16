@@ -2,7 +2,7 @@
 const UserInfo = ({user}) => {
     return (
         <div>
-            {user} -- {user.phone} -- {user.email}
+            {user.name} -- {user.phone} -- {user.email}
         </div>
     );
 };
