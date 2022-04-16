@@ -13,7 +13,7 @@ const App = () => {
     return (
         <div>
             <div className={'user_userInfo'}>
-                <Users setUser={setUser}/>
+                <Users setUser={setUser} setUserId={setUserId}/>
                 {user && <UserInfo user={user} setUserId={setUserId}/>}}
             </div>
             {userId && <Posts userId={userId}/>}
