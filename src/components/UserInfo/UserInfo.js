@@ -1,15 +1,8 @@
-import React, {useEffect, useState} from 'react';
 
-const UserInfo = ({infoId}) => {
-    const [userInfo, setUserInfo] = useState([])
-    useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/users/'+ infoId)
-            .then(value => value.json())
-            .then(value => setUserInfo(value))
-    }, [])
+const UserInfo = ({user}) => {
     return (
         <div>
-            {userInfo.name} -- {userInfo.phone}
+            {user} -- {user.phone} -- {user.email}
         </div>
     );
 };

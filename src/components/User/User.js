@@ -1,12 +1,12 @@
 import React from 'react';
 
-const User = ({user,setInfoId}) => {
+const User = ({user,setUser}) => {
     const {name, id, username, email} = user
 
     return (
         <div>
             {id} -- {name} -- {username}
-            <input type={"button"} value={'INFO'} onClick={setInfoId(id)}/>
+            <input type={"button"} value={'INFO'} onClick={setUser(user)}/>
         </div>
     );
 };

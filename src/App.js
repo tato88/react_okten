@@ -5,12 +5,12 @@ import UserInfo from "./components/UserInfo/UserInfo";
 import './App.css';
 
 const App = () => {
-    const [infoId,setInfoId] = useState(null)
+    const [user,setUser] = useState([])
     return (
         <div>
             <div className={'user_userInfo'}>
-                <Users setInfoId={setInfoId}/>
-                {infoId && <UserInfo infoId={infoId}/>}
+                <Users setUser={setUser}/>
+                {user && <UserInfo user={user}/>}
             </div>
         </div>
     );
