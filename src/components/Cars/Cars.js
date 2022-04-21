@@ -5,12 +5,12 @@ import Car from "../Car/Car";
 
 const Cars = ({newCar}) => {
 
-    const [cars, setCars] = useState()
-    const [deteledCars, setDeletedCars] = useState()
+    const [cars, setCars] = useState([])
+    const [deletedId, setDeletedId] = useState(null)
 
     useEffect(() => {
         carsService.getAll().then(({data}) => setCars(data))
-    }, [deteledCars])
+    }, [])
 
     useEffect(() => {
         if (newCar) {
@@ -18,11 +18,14 @@ const Cars = ({newCar}) => {
             setCars(prevState => [...prevState, newCar])  //or
 
         }
-    }, [newCar])
+        if (deletedId) {
+            setCars(cars.filter(car => car.id !== deletedId))
+        }
+    }, [newCar, deletedId])
 
     return (
         <div>
-            {cars && cars.map(car => <Car key={car.id} car={car} setDeletedCars={setDeletedCars()}/>)}
+            {cars && cars.map(car => <Car key={car.id} car={car} setDeletedId={setDeletedId}/>)}
         </div>
     );
 };
